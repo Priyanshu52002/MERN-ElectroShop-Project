@@ -20,6 +20,9 @@ const Admin = () => {
                     const res = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/product/admin`);
                     setProduct(res.data.products);
                 }
+                else{
+                    console.log("you are not authorised");
+                    return ;
             } catch (error) {
                 console.error('Error fetching products:', error);
                 navigate('/login'); // useNavigate hook for navigation
