@@ -12,6 +12,7 @@ const Stats = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
+        axios.defaults.withCredentials = true;
         const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/stripe/api/stats`);
 
         if (!response.ok) {
