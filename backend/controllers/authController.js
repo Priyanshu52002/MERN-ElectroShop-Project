@@ -43,7 +43,7 @@ module.exports.login = async function login(req, res) {
         if (passwordMatched) {
             let uid = user['_id'];
             let token = jwt.sign({ payload: uid }, process.env.JWT_SECRET, { expiresIn: '1d' });
-            res.cookie('authToken', token, { httpOnly: true, secure: process.env.NODE_ENV === "production", maxAge: 86400000 });
+            res.cookie('authToken', token, { httpOnly: true, secure: process.env.NODE_ENV === "production",sameSite: 'None', maxAge: 86400000 });
             res.status(200).json({
                 message: "User logged in successfully",
                 role: user.role
@@ -63,7 +63,7 @@ module.exports.login = async function login(req, res) {
 };
 
 module.exports.logout = function logout(req, res) {
-    res.cookie('authToken', '', { httpOnly: true, secure: process.env.NODE_ENV === "production", expires: new Date(0) });
+    res.cookie('authToken', '', { httpOnly: true, secure: process.env.NODE_ENV === "production",sameSite: 'None', expires: new Date(0) });
     res.status(200).json({
         message: 'User logged out successfully'
     });
