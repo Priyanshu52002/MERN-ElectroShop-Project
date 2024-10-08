@@ -1,33 +1,41 @@
-Backend (Express.js):
+# MERN ElectroShop Project
 
-Database: MongoDB, with Mongoose ODM for managing models and schemas.
+MERN ElectroShop is a full-stack e-commerce web application for an electronics store, built using the **MERN stack** (MongoDB, Express.js, React.js, and Node.js). The platform allows users to browse, filter, and purchase electronics such as Smart Phones, Laptops, Speakers, and Headphones. The project incorporates a clean and modern UI with Tailwind CSS, and features include a product cart, Stripe payment integration, user authentication, and an admin panel for managing products.
 
-Authentication: JWT-based authentication for secure user login and registration, with bcryptjs for password hashing.
+## Features
 
-Routes: RESTful API routes for handling products, users, subscriptions, and Stripe payments.
+- **Product Management:** Admins can create, update, and delete products directly from the dashboard.
+- **Category Filtering:** Users can filter products by categories such as **Smart Phones**, **Laptops**, **Speakers**, and **Headphones**.
+- **Shopping Cart:** Users can add, remove, and manage items in the cart, with cart state synchronized via `localStorage`.
+- **Stripe Payment Integration:** Secure payments powered by Stripe, with support for INR transactions.
+- **User Authentication:** JWT-based authentication for secure login and registration, with role-based access for admins and users.
+- **Responsive Design:** Fully responsive layout using **Tailwind CSS**, optimized for all screen sizes.
+- **Theme Toggle:** Switch between dark and light mode with a customizable theme toggle.
 
-File Uploads: Integration with Cloudinary for image storage, using multer for handling file uploads.
+## Tech Stack
 
-Payment Processing: Stripe integration for handling payments, balances, and checkout sessions.
+- **Frontend:** React.js, Tailwind CSS
+- **Backend:** Node.js, Express.js, MongoDB
+- **Payment Gateway:** Stripe API
+- **Authentication:** JWT, bcryptjs
+- **Image Uploads:** Cloudinary API
 
-Environment Configuration: dotenv for managing environment variables.
+## Getting Started
 
+To set up the project locally, follow these steps:
 
-Frontend (React.js):
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Priyanshu52002/MERN-ElectroShop-Project.git
+### INSTALL DEPENDENCIES
+ ```bash
+ cd MERN-ElectroShop-Project
+ npm install
+ cd client
+ npm install
+```
+#Configure environment variables for the backend (MongoDB, Cloudinary, Stripe, etc.).
 
-Routing: React Router for navigation between different pages.
-
-State Management: Context API for managing global states like cart and user authentication status.
-
-Styling: Tailwind CSS for a clean and modern design, with custom components for a consistent look and feel.
-
-Notifications: notistack for displaying toast notifications.
-
-
-Third-Party Integrations:
-
-Cloudinary: For storing and managing uploaded images.
-
-Stripe: For payment processing, including creating checkout sessions and retrieving account stats.
-
-JWT & bcryptjs: For secure user authentication and authorization.
+### Run the dev enviornment
+```bash
+npm run dev
